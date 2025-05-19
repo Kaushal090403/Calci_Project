@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="{% static 'css/c1.css' %}">
+    <link rel="icon" href="{% static 'images/calci.ico' %}">
+</head>
+<body>
+    <center>
+        <h1>Calculator Application</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="number" name="num" placeholder="Enter number" required min="0" style="width:400px;">
+            <br><br>
+            <input type="submit" value="Find Square" name="sqr" class="btn">
+            <input type="submit" value="Find Cube" name="cub" class="btn">
+            <input type="submit" value="Find Square root" name="sqrt" class="btn">
+        </form>
+        <br>
+        {{ msg }}
+    </center>
+</body>
+</html>
